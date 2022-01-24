@@ -260,7 +260,8 @@ namespace CalculatorCK
 
         private void btnInverse_Click(object sender, EventArgs e)
         {
-
+            currVal = 1 / currVal;
+            displayInOut.Text = currVal.ToString();
         }
 
         private void btnToPercent_Click(object sender, EventArgs e)
