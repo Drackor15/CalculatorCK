@@ -31,6 +31,7 @@ namespace CalculatorCK
         public CalcForm()
         {
             InitializeComponent();
+            KeyDown += CalcForm_KeyDown;
         }
 
         private void CalcForm_Load(object sender, EventArgs e)
@@ -38,10 +39,152 @@ namespace CalculatorCK
             
         }
 
+        #region Key Events
+        private void CalcForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode) {
+                // Number Buttons (not NumPad)
+                case Keys.D0:
+                    e.Handled = true;
+                    btn0.PerformClick();
+                    break;
+                case Keys.D1:
+                    e.Handled = true;
+                    btn1.PerformClick();
+                    break;
+                case Keys.D2:
+                    e.Handled = true;
+                    btn2.PerformClick();
+                    break;
+                case Keys.D3:
+                    e.Handled = true;
+                    btn3.PerformClick();
+                    break;
+                case Keys.D4:
+                    e.Handled = true;
+                    btn4.PerformClick();
+                    break;
+                case Keys.D5:
+                    e.Handled = true;
+                    btn5.PerformClick();
+                    break;
+                case Keys.D6:
+                    e.Handled = true;
+                    btn6.PerformClick();
+                    break;
+                case Keys.D7:
+                    e.Handled = true;
+                    btn7.PerformClick();
+                    break;
+                case Keys.D8:
+                    e.Handled = true;
+                    btn8.PerformClick();
+                    break;
+                case Keys.D9:
+                    e.Handled = true;
+                    btn9.PerformClick();
+                    break;
+                // Number Keys (NumPad)
+                case Keys.NumPad0:
+                    e.Handled = true;
+                    btn0.PerformClick();
+                    break;
+                case Keys.NumPad1:
+                    e.Handled = true;
+                    btn1.PerformClick();
+                    break;
+                case Keys.NumPad2:
+                    e.Handled = true;
+                    btn2.PerformClick();
+                    break;
+                case Keys.NumPad3:
+                    e.Handled = true;
+                    btn3.PerformClick();
+                    break;
+                case Keys.NumPad4:
+                    e.Handled = true;
+                    btn4.PerformClick();
+                    break;
+                case Keys.NumPad5:
+                    e.Handled = true;
+                    btn5.PerformClick();
+                    break;
+                case Keys.NumPad6:
+                    e.Handled = true;
+                    btn6.PerformClick();
+                    break;
+                case Keys.NumPad7:
+                    e.Handled = true;
+                    btn7.PerformClick();
+                    break;
+                case Keys.NumPad8:
+                    e.Handled = true;
+                    btn8.PerformClick();
+                    break;
+                case Keys.NumPad9:
+                    e.Handled = true;
+                    btn9.PerformClick();
+                    break;
+                // Field Buttons
+                case Keys.Back:
+                    e.Handled = true;
+                    btnDel.PerformClick();
+                    break;
+                case Keys.Delete:
+                    e.Handled = true;
+                    btnDel.PerformClick();
+                    break;
+                case Keys.E:
+                    e.Handled = true;
+                    btnCE.PerformClick();
+                    break;
+                case Keys.C:
+                    e.Handled = true;
+                    btnC.PerformClick();
+                    break;
+                // Operation Buttons (not NumPad)
+                case Keys.Oemplus:
+                    e.Handled = true;
+                    btnAdd.PerformClick();
+                    break;
+                case Keys.OemMinus:
+                    e.Handled = true;
+                    btnMin.PerformClick();
+                    break;
+                // Operation Buttons (NumPad)
+                case Keys.Add:
+                    e.Handled = true;
+                    btnAdd.PerformClick();
+                    break;
+                case Keys.Subtract:
+                    e.Handled = true;
+                    btnMin.PerformClick();
+                    break;
+                case Keys.Multiply:
+                    e.Handled = true;
+                    btnAdd.PerformClick();
+                    break;
+                case Keys.Divide:
+                    e.Handled = true;
+                    btnMin.PerformClick();
+                    break;
+                // Special Buttons
+                case Keys.OemPeriod:
+                    e.Handled = true;
+                    btnDec.PerformClick();
+                    break;
+                case Keys.Decimal:
+                    e.Handled = true;
+                    btnDec.PerformClick();
+                    break;
+            }        
+        }
+        #endregion
+
         #region Button Events
 
         #region Number Buttons
-        private void btn0_Click_1(object sender, EventArgs e)
+        private void btn0_Click(object sender, EventArgs e)
         {
             if (!isOperationSet)
             {

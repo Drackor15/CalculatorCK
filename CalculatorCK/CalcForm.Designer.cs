@@ -29,6 +29,7 @@ namespace CalculatorCK
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.displayInOut = new System.Windows.Forms.TextBox();
             this.labelInOut = new System.Windows.Forms.Label();
             this.btnToPercent = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@ namespace CalculatorCK
             this.btnDec = new System.Windows.Forms.Button();
             this.btnEquals = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +161,7 @@ namespace CalculatorCK
             this.btnCE.Size = new System.Drawing.Size(74, 42);
             this.btnCE.TabIndex = 6;
             this.btnCE.Text = "CE";
+            this.toolTip1.SetToolTip(this.btnCE, "Clear Entry     E");
             this.btnCE.UseVisualStyleBackColor = true;
             this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
@@ -174,6 +177,7 @@ namespace CalculatorCK
             this.btnC.Size = new System.Drawing.Size(74, 42);
             this.btnC.TabIndex = 7;
             this.btnC.Text = "Clear";
+            this.toolTip1.SetToolTip(this.btnC, "Clear     C");
             this.btnC.UseVisualStyleBackColor = true;
             this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
@@ -415,7 +419,7 @@ namespace CalculatorCK
             this.btn0.TabIndex = 23;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
-            this.btn0.Click += new System.EventHandler(this.btn0_Click_1);
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btnDec
             // 
@@ -503,6 +507,7 @@ namespace CalculatorCK
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.labelInOut);
             this.Controls.Add(this.displayInOut);
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(374, 430);
             this.Name = "CalcForm";
             this.Text = "C# Calculator";
@@ -541,6 +546,7 @@ namespace CalculatorCK
         private System.Windows.Forms.Button btnDec;
         private System.Windows.Forms.Button btnEquals;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
